@@ -1,0 +1,19 @@
+aws:
+  # env := development | test | production
+  env: development
+  bucket: "sagemaker-ff-data-bucket"
+
+# pair := pair in pair_list | ALL
+target_pair_list:
+  - "ALL"
+
+# interval := interval in interval_list | ALL
+target_interval_list:
+  - "4h"
+  - "1d"
+  - "1W"
+
+tradingview_data_fetching_job:
+  job_name: tradingview_data_fetching_job
+  s3_output_base_path: "s3://sagemaker-ff-data-bucket/datalake_dev/TradingView/"
+  local_data_base_path: "./tradingview_data"
